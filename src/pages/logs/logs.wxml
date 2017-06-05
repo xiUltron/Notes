@@ -1,0 +1,21 @@
+<view class="container">
+    <view wx:if="{{logs.length}}">
+      <text class="clear" bindtap="clearStorage">清空所有{{count}}条日志</text>
+      <view class="logs">
+        <view class="item {{(index+1)%2 === 0 ? 'darkcolor':''}}" wx:for="{{logs}}">
+          <view class="head">
+            <text class="logs-timestamp">[ {{item.timestamp}} ]</text>
+            <text class="logs-action">{{item.action}}</text>
+          </view>
+          <text class="logs-content">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="empty">
+      <text class="title">No Logs</text>
+      <text class="content">Please add some TODOS</text>
+    </view>
+  <view class="moreMsg" wx:if="{{isDone}}">
+    没有更多了
+  </view>
+</view>

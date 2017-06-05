@@ -1,0 +1,84 @@
+.container {
+  border-top: 1rpx solid #e5e5e5;
+  padding: 20rpx;
+  font-size: 11pt;
+}
+
+.clear {
+  font-size: 28rpx;
+  color: #f00;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20rpx;
+}
+
+.logs {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+}
+
+.item {
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 20rpx;
+  color: #888;
+}
+
+.item.darkcolor {
+  background-color: rgba(240, 240, 240, 0.6);
+}
+
+.item :last-child {
+  border-bottom: 0;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.logs-timestamp {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.logs-action {
+  color: #f40;
+}
+
+.logs-content {
+  line-height: 130%;
+  color: #444;
+  font-size: 12pt;
+  display: -webkit-box;
+  overflow: hidden;
+  /*text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;*/
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 60rpx;
+  color: #444;
+  margin: 200rpx auto 50rpx;
+}
+
+.content {
+  color: #888;
+}
+
+.moreMsg {
+  height: 60rpx;
+  text-align: center;
+  line-height: 40px;
+  color: #888;
+}

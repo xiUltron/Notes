@@ -1,0 +1,78 @@
+<view class="container">
+
+  <!--搜索框-->
+  <view class="header{{onFocus? ' active':''}}">
+    <image src="/images/plus.png" class="plus"></image>
+    <input id="input" class="new-todo" value="{{input}}" placeholder="Anything here..." auto-focus maxlength="-1" bindfocus="inputFocus" bindblur="inputBlur" bindconfirm="addTodoHandle" />
+    <image bindtap="setTimer" class="timer" src="/images/time.png"></image>
+  </view>
+
+  <!--slider-->
+  <view class="slider_frame{{onSetTimer ? ' slider_frame-show':''}}">
+    <slider min="1" value="5" class="slider_content{{onSetTimer ? ' slider_content-show':''}}" show-value max="60" selected-color="#00bfff" />
+  </view>
+
+  <!--备忘录内容框-->
+  <block wx:if="{{todos.length}}">
+    <view class="todos">
+      <view class="item{{(index+1)%2 === 0 ? ' darkmode':''}} {{item.completed? ' completed' : ''}}" wx:for="{{todos}}" wx:key="{{index}}" data-index="{{index}}" bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd" bindtap="myBindTap" bindlongtap="showMore">
+        <icon class="checkbox" type="{{item.completed ? 'success' : 'circle'}}" />
+        <text class="name">{{item.name}}</text>
+        <!--<text class="timestamp ">{{item.timestamp}}</text>-->
+        <icon class="remove" type="clear " size="16 " catchtap="removeTodoHandle" data-index="{{index}}" />
+      </view>
+    </view>
+
+    <!--弹出显示备忘详情-->
+    <view class="more" wx:if="{{moreStatus}}">
+      <view class="box">
+        <view class="box-hd">
+          <text>备忘详情</text>
+          <image class="close" src="/images/close.png" bindtap="hideMore" />
+        </view>
+        <view class="box-bd">
+          <text class="more-content">{{todos[targetIndex].name}}</text>
+          <view class="timestamp">创建于：{{todos[targetIndex].timestamp}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!--批量处理操作-->
+    <view class="footer">
+      <text bindtap="toggleAllHandle" class="btn">Toggle All</text>
+      <text wx:if="{{leftCount}}">{{leftCount}} item{{leftCount === 1 ? '' :'s'}} left</text>
+      <text bindtap="clearCompletedHandle" class="btn-clear">Clear Completed</text>
+    </view>
+  </block>
+
+  <!--空白界面-->
+  <block wx:else>
+    <view class="empty">
+      <text class="title">Congratulations！</text>
+      <text class="content">There is no remaining TODOS</text>
+      <view class="help" bindtap="showHelp">
+        <text>帮助</text>
+        <image class="help-img" src="/images/help.png" />
+      </view>
+    </view>
+  </block>
+
+  <!--弹出显示帮助-->
+  <view class="more" wx:if="{{helpStatus}}">
+    <view class="box">
+      <view class="box-hd">
+        <text>帮助</text>
+        <image class="close" src="/images/close.png" bindtap="hideMore" />
+      </view>
+      <view class="box-bd">
+        <view class="help-content">
+          <text>①输入后，点击键盘上的“完成”按钮即可将内容添加至备忘录；</text>
+          <text>②点击相应的备忘条目可以标记或取消标记，长按可显示当前备忘详情；</text>
+          <text>③左下角为批量标记所有备忘、中间为剩余未标记条数、右下角为清空所有备忘；</text>
+          <text>④第二标签页为操作日志；</text>
+          <text>⑤闹钟提醒等更多功能正在努力学习中...</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
