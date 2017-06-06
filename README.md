@@ -2,7 +2,7 @@
 ## About Notes
  一个微信小程序，简单的备忘录项目，同时也是第一个使用 GitHub 的项目，通过不断的功能完善增加以学习小程序开发    
  一些功能的设计或设想（如闹铃提醒）不考虑项目的实用性
-> **感谢大神[汪磊][1]，本项目在他的 TODOS 项目基础上进行修改**
+> **感谢大神 [汪磊][1]，本项目在他的 [weapp-todos][2] 项目基础上进行修改**
 ## New
 - 样式美化
 - 长按显示 notes 详情
@@ -84,4 +84,5 @@ bingLongTap(e) {
 查阅了很多资料，觉得那些处理都太麻烦了，还要限制 view 的高度，用 scrollview 算拉到什么位置，头都大了。后来发现我的方法更爆炸。  
 简单来说就是，定义一个全局变量 n 用作限定 logs[]的范围，使页面只显示 logs[0]-logs[n]条数据，然后在 `onReachBottom()` 方法中让 n 自加3（数字随意，每次上拉多加载的条数），并调用 `loadData()` 方法向 data 中的 logs[] 写入 logs[0]-logs[n+3]，再上拉一次写入 logs[0]-logs[n+6]...在 `onShow()` 中设置 n 初值为9，这个数字不可以太小，太小会导致一个页面只显示几条数据就没了，无法触发 `onReachBottom()` 方法，太大的话会导致这个页面一显示出来顶部不是第一条数据，影响美观。基本就是这样，具体看代码吧。
 
-[1]:	http://github.com/zce
+[1]:	http://github.com/zce "https://github.com/zce"
+[2]:	https://github.com/zce/weapp-todos
