@@ -35,6 +35,12 @@ Page({
     }
   },
 
+  clearInput(e) {
+    this.setData({
+      input: ""
+    })
+  },
+
   // 判断如果本地缓存数据 isClear 存在，就清除初始数据里的 logs 以避免任何一个操作把未清除的 logs数据再次写入缓存，导致日志永远无法清除。然后把 isClear 存空
   clearLogData() {
     var isClear = wx.getStorageSync('isClear')
@@ -79,21 +85,18 @@ Page({
     this.load()
   },
 
-  /* 输入时同步写入 data
-    inputChangeHandle(e) {
-      this.setData({ input: e.detail.value })
-    },
-   */
+  // 输入时同步写入 data
+  inputChangeHandle(e) {
+    this.setData({ input: e.detail.value })
+  },
 
   // input confirm触发。 保存输入文字到 data
   addTodoHandle(e) {
-    this.data.input = e.detail.value
     console.log('data input before:', this.data.input)
-    // if (!this.data.input || !this.data.input.trim()) return
-    if (!e.detail.value || !e.detail.value.trim()) return
+    if (!this.data.input || !this.data.input.trim()) return
+
     var todos = this.data.todos
-    // todos.unshift({ name: this.data.input, completed: false, timestamp: util.formatTime(new Date()) })
-    todos.unshift({ name: e.detail.value, completed: false, timestamp: util.formatTime(new Date()) })
+    todos.unshift({ name: this.data.input, completed: false, timestamp: util.formatTime(new Date()) })
 
     var logs = this.data.logs
     logs.push({ timestamp: util.formatTime(new Date()), action: '新增', name: this.data.input })
@@ -203,9 +206,11 @@ Page({
     })
   },
 
-  setTimer() {
-    this.setData({ onSetTimer: !this.data.onSetTimer })
-  },
+  /* 暂时弃用该功能
+    setTimer() {
+      this.setData({ onSetTimer: !this.data.onSetTimer })
+    },
+  */
 
   // bindlongtap绑定事件：显示详情，把当前点击位置的下标 index 保存到 data.targetIndex
   showMore(e) {
@@ -244,6 +249,6 @@ Page({
   showHelp() {
     this.setData({ helpStatus: true })
   }
-}) 
+})
 
 // git test ignore it

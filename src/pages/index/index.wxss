@@ -136,7 +136,7 @@
 
 .title {
   font-size: 60rpx;
-  margin: 200rpx 50rpx 50rpx;
+  margin: 140rpx 50rpx 50rpx;
   color: #444;
 }
 
@@ -150,14 +150,14 @@
   display: flex;
   align-items: center;
   color: #bbb;
-  font-size: 10pt;
+  font-size: 12pt;
   margin-top: 30rpx;
   cursor: pointer;
 }
 
 .help-img {
-  width: 11pt;
-  height: 11pt;
+  width: 12pt;
+  height: 12pt;
   margin: 0 5rpx;
 }
 

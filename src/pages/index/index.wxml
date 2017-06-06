@@ -3,8 +3,8 @@
   <!--搜索框-->
   <view class="header{{onFocus? ' active':''}}">
     <image src="/images/plus.png" class="plus"></image>
-    <input id="input" class="new-todo" value="{{input}}" placeholder="Anything here..." auto-focus maxlength="-1" bindfocus="inputFocus" bindblur="inputBlur" bindconfirm="addTodoHandle" />
-    <image bindtap="setTimer" class="timer" src="/images/time.png"></image>
+    <input id="input" class="new-todo" value="{{input}}" placeholder="Anything here..." auto-focus maxlength="-1" bindfocus="inputFocus" bindblur="inputBlur" bindconfirm="addTodoHandle" bindinput="inputChangeHandle" />
+    <image bindtap="clearInput" class="timer" src="/images/clear.png"></image>
   </view>
 
   <!--slider-->
@@ -48,8 +48,8 @@
   <!--空白界面-->
   <block wx:else>
     <view class="empty">
-      <text class="title">Congratulations！</text>
-      <text class="content">There is no remaining TODOS</text>
+      <text class="title">Congratulations!</text>
+      <text class="content">There is no remaining Notes</text>
       <view class="help" bindtap="showHelp">
         <text>帮助</text>
         <image class="help-img" src="/images/help.png" />
