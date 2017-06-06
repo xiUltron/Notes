@@ -4,7 +4,7 @@
  一些功能的设计或设想（如闹铃提醒）不考虑项目的实用性
 > **感谢大神 [汪磊][1]，本项目在他的 [weapp-todos][2] 项目基础上进行修改**
 ## Preview
-> To Limit file size, Its frame rate is set to 15, so it may not be smooth
+> This is a gif of 2M size, please wait
 
 ![][image-1]
 ## New
