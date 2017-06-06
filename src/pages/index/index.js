@@ -244,4 +244,6 @@ Page({
   showHelp() {
     this.setData({ helpStatus: true })
   }
-})
+}) 
+
+// git test ignore it
