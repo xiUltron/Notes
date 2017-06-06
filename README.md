@@ -94,4 +94,4 @@ bingLongTap(e) {
 [5]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
 [6]:	#%E6%97%A5%E5%BF%97%E7%9A%84%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD
 
-[image-1]:	https://github.com/xiUltron/Notes/blob/master/Preview/preview.gif
+[image-1]:	https://github.com/xiUltron/Notes/blob/master/preview/preview.gif
