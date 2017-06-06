@@ -5,7 +5,7 @@
 > **感谢大神 [汪磊][1]，本项目在他的 [weapp-todos][2] 项目基础上进行修改**
 ## New
 - [样式美化][3]
-- [长按显示 notes 详情][4]
+- [长按显示notes详情][4]
 - [清空日志][5]
 - **[日志的上拉加载][6]**
 ## Todos
@@ -19,7 +19,7 @@
 - 列表隔行背景色区分
 	+   提升视觉效果
 	+ 通过判断 `view` 绑定数组的下标奇偶，渲染不同的样式来实现
-### 长按显示 notes 详情
+### 长按显示notes详情
 - 坑：当一个组件上同时绑定 bindtap 和 bindlongtap 事件时，长按触发 bindlongtap 之后始终会触发 bindtap
 	>   测试发现，小程序中事件执行顺序为：  
 	> 点击：touchstart → touchend → tap  
@@ -87,6 +87,6 @@ bingLongTap(e) {
 [1]:	http://github.com/zce "https://github.com/zce"
 [2]:	https://github.com/zce/weapp-todos
 [3]:	#%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96
-[4]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BA%20notes%20%E8%AF%A6%E6%83%85
+[4]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BAnotes%E8%AF%A6%E6%83%85
 [5]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
 [6]:	#%E6%97%A5%E5%BF%97%E7%9A%84%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD
