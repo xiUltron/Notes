@@ -5,6 +5,7 @@
 > **感谢大神 [汪磊][1]，本项目在他的 [weapp-todos][2] 项目基础上进行修改**
 ## Preview
 > To Limit file size, Its frame rate is set to 15, so it may not be smooth
+
 ![][image-1]
 ## New
 - [样式美化][3]
