@@ -13,7 +13,7 @@
     </view>
     <view wx:else class="empty">
       <text class="title">No Logs</text>
-      <text class="content">Please add some TODOS</text>
+      <text class="content">Please add some Notes</text>
     </view>
   <view class="moreMsg" wx:if="{{isDone}}">
     没有更多了
