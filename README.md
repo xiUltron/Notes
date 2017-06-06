@@ -3,11 +3,14 @@
  一个微信小程序，简单的备忘录项目，同时也是第一个使用 GitHub 的项目，通过不断的功能完善增加以学习小程序开发    
  一些功能的设计或设想（如闹铃提醒）不考虑项目的实用性
 > **感谢大神 [汪磊][1]，本项目在他的 [weapp-todos][2] 项目基础上进行修改**
+## Preview
+> To Limit file size, Its frame rate is set to 5, so it may not be smooth
+![][3]
 ## New
-- [样式美化][3]
-- [长按显示notes详情][4]
-- [清空日志][5]
-- **[日志的上拉加载][6]**
+- [样式美化][4]
+- [长按显示notes详情][5]
+- [清空日志][6]
+- **[日志的上拉加载][7]**
 ## Todos
 - [ ] 数据服务器同步
 - [ ] 闹铃提醒
@@ -86,7 +89,8 @@ bingLongTap(e) {
 
 [1]:	http://github.com/zce "https://github.com/zce"
 [2]:	https://github.com/zce/weapp-todos
-[3]:	#%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96
-[4]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BAnotes%E8%AF%A6%E6%83%85
-[5]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
-[6]:	#%E6%97%A5%E5%BF%97%E7%9A%84%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD
+[3]:	/Notes/Previre/Preview.gif
+[4]:	#%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96
+[5]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BAnotes%E8%AF%A6%E6%83%85
+[6]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
+[7]:	#%E6%97%A5%E5%BF%97%E7%9A%84%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD
