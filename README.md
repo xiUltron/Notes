@@ -6,12 +6,12 @@
 ## Preview
 > This is a gif of 2M size, please wait
 
-![][image-1]
+\<center\>![][3]\</center\>
 ## New
-- [样式美化][3]
-- [长按显示notes详情][4]
-- [清空日志][5]
-- **[日志的上拉加载][6]**
+- [样式美化][4]
+- [长按显示notes详情][5]
+- [清空日志][6]
+- **[日志的上拉加载][7]**
 ## Todos
 - [ ] 数据服务器同步
 - [ ] 闹铃提醒
@@ -90,9 +90,8 @@ bingLongTap(e) {
 
 [1]:	http://github.com/zce "https://github.com/zce"
 [2]:	https://github.com/zce/weapp-todos
-[3]:	#%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96
-[4]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BAnotes%E8%AF%A6%E6%83%85
-[5]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
-[6]:	#%E6%97%A5%E5%BF%97%E7%9A%84%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD
-
-[image-1]:	%3Cdiv%20align=center%3E%3Cimg%20src=%22https://github.com/xiUltron/Notes/blob/master/preview/preview.gif%22%20/%3E%3C/div%3E
+[3]:	https://github.com/xiUltron/Notes/blob/master/preview/preview.gif
+[4]:	#%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96
+[5]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BAnotes%E8%AF%A6%E6%83%85
+[6]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
+[7]:	#%E6%97%A5%E5%BF%97%E7%9A%84%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD
