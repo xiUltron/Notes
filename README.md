@@ -89,10 +89,10 @@ bingLongTap(e) {
 
 [1]:	http://github.com/zce "https://github.com/zce"
 [2]:	https://github.com/zce/weapp-todos
-[3]:	Preview
-[4]:	New%20Features
-[5]:	Todos
-[6]:	Details
+[3]:	#Preview
+[4]:	#New%20Features
+[5]:	#Todos
+[6]:	#Details
 [7]:	#%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96
 [8]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BAnotes%E8%AF%A6%E6%83%85
 [9]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
