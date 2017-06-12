@@ -3,20 +3,15 @@
  一个微信小程序，简单的备忘录项目，同时也是第一个使用 GitHub 的项目，通过不断的功能完善增加以学习小程序开发    
  一些功能的设计或设想（如闹铃提醒）不考虑项目的实用性
 > **感谢大神 [汪磊][1]，本项目在他的 [weapp-todos][2] 项目基础上进行修改**
-## Contents
-- [Preview][3]
-- [New Features][4]
-- [Todos][5]
-- [Details][6]
 ## Preview
 > This is a gif of 2M size, please wait
 
 ![][image-1]
 ## New Features
-- [样式美化][7]
-- [长按显示notes详情][8]
-- [清空日志][9]
-- **[日志的上拉加载][10]**
+- [样式美化][3]
+- [长按显示notes详情][4]
+- [清空日志][5]
+- **[日志的上拉加载][6]**
 ## Todos
 - [ ] 数据服务器同步
 - [ ] 闹铃提醒
@@ -34,6 +29,7 @@
 	> 点击：touchstart → touchend → tap  
 	> 长按：touchstart → longtap → touchend → tap  
 	> 所以，最后无论如何，都会执行 tap 事件  
+
 所以不能简单的绑定 bindtap 和 bindlongtap 事件，需要通过 bindTouchStart 和 bindTouchEnd 来计算出时间差判断按下时间（一般大于350ms 视为长按）来调用长按或者点击事件：
 ```js
 // js
@@ -89,13 +85,9 @@ bingLongTap(e) {
 
 [1]:	http://github.com/zce "https://github.com/zce"
 [2]:	https://github.com/zce/weapp-todos
-[3]:	#Preview
-[4]:	#New%20Features
-[5]:	#Todos
-[6]:	#Details
-[7]:	#%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96
-[8]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BAnotes%E8%AF%A6%E6%83%85
-[9]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
-[10]:	#%E6%97%A5%E5%BF%97%E7%9A%84%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD
+[3]:	#%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96
+[4]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BAnotes%E8%AF%A6%E6%83%85
+[5]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
+[6]:	#%E6%97%A5%E5%BF%97%E7%9A%84%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD
 
 [image-1]:	https://github.com/xiUltron/Notes/blob/master/preview/preview.gif
