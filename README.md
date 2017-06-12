@@ -3,15 +3,20 @@
  一个微信小程序，简单的备忘录项目，同时也是第一个使用 GitHub 的项目，通过不断的功能完善增加以学习小程序开发    
  一些功能的设计或设想（如闹铃提醒）不考虑项目的实用性
 > **感谢大神 [汪磊][1]，本项目在他的 [weapp-todos][2] 项目基础上进行修改**
+## Contents
+- [Preview][3]
+- [New Features][4]
+- [Todos][5]
+- [Details][6]
 ## Preview
 > This is a gif of 2M size, please wait
 
 ![][image-1]
-## New
-- [样式美化][3]
-- [长按显示notes详情][4]
-- [清空日志][5]
-- **[日志的上拉加载][6]**
+## New Features
+- [样式美化][7]
+- [长按显示notes详情][8]
+- [清空日志][9]
+- **[日志的上拉加载][10]**
 ## Todos
 - [ ] 数据服务器同步
 - [ ] 闹铃提醒
@@ -29,7 +34,6 @@
 	> 点击：touchstart → touchend → tap  
 	> 长按：touchstart → longtap → touchend → tap  
 	> 所以，最后无论如何，都会执行 tap 事件  
-  
 所以不能简单的绑定 bindtap 和 bindlongtap 事件，需要通过 bindTouchStart 和 bindTouchEnd 来计算出时间差判断按下时间（一般大于350ms 视为长按）来调用长按或者点击事件：
 ```js
 // js
@@ -71,28 +75,27 @@ bingLongTap(e) {
 }
 ```
 这样基本上可以完美解决了，但是还是觉得比较智障，这种小问题小程序团队搞不定？可以说是非常爆笑了:relieved:   
-
-
 - 关于长按显示的实现  
 	在 data 里设置一个布尔类型的 isMoreStatus 默认0，触发长按 showMore ，设为1，在 wxml 中条件渲染 `wx:if` 来控制弹出 view。  
 显示内容方面，由于事件传值和详情 view 不是同一个，渲染详情 view 时无法直接使用点击时传过来的 `e.currentTarget.dataset.index` ，所以 data 里还必须有一个 targetIndex 来保存传过来的下标在详情 view 中使用，确保显示的是我们点击条目的详情内容。  
-
 ### 清空日志
 日志数据是保存在本地缓存中的，第一次尝试在“清除所有日志”绑定事件中简单的做 `wx.clearStorageSync()` 同时把 data 里的数据设为空，发现确实可以删除，但是一旦在首页中有任何操作，再回到日志界面，会发现之前清空的所有数据又回来了。调试发现，在 index 页面的每一个操作都会触发 save() 方法，并且把日志数据写入 data。save()方法是把数据保存到本地缓存，而数据的来源就是 index 的 data。  
 所以，只要在 logs 页面清除数据的同时，使 index 中的 logs[] 数据也清空。笨方法，`wx.setStorageSync('isClear', '1')` 设置一个本地缓存，保存任意数据，在 index `clearLogData()` 中判断本地缓存 isClear 是否存在，存在即清空 data 中的 logs[] 数据，然后清空 isClear，并且在 `onShow()` 中调用 `clearLogData()` 方法，确保 logs 页面完成清除日志操作后，这里的 logs[] 也被清空。
-
 ### 日志的上拉加载
 > 实际上在这个项目中，使用  `reverse()` 方法颠倒数组的显示，更加合适，添加上拉加载更多功能纯粹是为了学习。
-
 实现上拉加载的思路：  
 查阅了很多资料，觉得那些处理都太麻烦了，还要限制 view 的高度，用 scrollview 算拉到什么位置，头都大了。后来发现我的方法更爆炸。  
 简单来说就是，定义一个全局变量 n 用作限定 logs[]的范围，使页面只显示 logs[0]-logs[n]条数据，然后在 `onReachBottom()` 方法中让 n 自加3（数字随意，每次上拉多加载的条数），并调用 `loadData()` 方法向 data 中的 logs[] 写入 logs[0]-logs[n+3]，再上拉一次写入 logs[0]-logs[n+6]...在 `onShow()` 中设置 n 初值为9，这个数字不可以太小，太小会导致一个页面只显示几条数据就没了，无法触发 `onReachBottom()` 方法，太大的话会导致这个页面一显示出来顶部不是第一条数据，影响美观。基本就是这样，具体看代码吧。
 
 [1]:	http://github.com/zce "https://github.com/zce"
 [2]:	https://github.com/zce/weapp-todos
-[3]:	#%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96
-[4]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BAnotes%E8%AF%A6%E6%83%85
-[5]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
-[6]:	#%E6%97%A5%E5%BF%97%E7%9A%84%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD
+[3]:	Preview
+[4]:	New%20Features
+[5]:	Todos
+[6]:	Details
+[7]:	#%E6%A0%B7%E5%BC%8F%E7%BE%8E%E5%8C%96
+[8]:	#%E9%95%BF%E6%8C%89%E6%98%BE%E7%A4%BAnotes%E8%AF%A6%E6%83%85
+[9]:	#%E6%B8%85%E7%A9%BA%E6%97%A5%E5%BF%97
+[10]:	#%E6%97%A5%E5%BF%97%E7%9A%84%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD
 
 [image-1]:	https://github.com/xiUltron/Notes/blob/master/preview/preview.gif
